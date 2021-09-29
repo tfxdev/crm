@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="body">
+    <h1>Update lead : <b>{{lead.first_name}} {{lead.last_name}}</b></h1>
+    <div>
+        <form method="post" action="">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Update lead</button>
+        </form>
+    </div>
+</div>
+{% endblock %} 

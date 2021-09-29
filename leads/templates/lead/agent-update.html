@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Update agent : <b>{{agent.first_name}} {{agent.last_name}}</b></h1>
+    <div>
+        <form method="post" action="">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Update agent</button>
+        </form>
+    </div>
+
+{% endblock %} 

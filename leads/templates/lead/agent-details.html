@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Agents</h1>
+<ul>               
+    <li>
+        <div>Person: {{agent.first_name}} {{agent.last_name}}</div><hr>
+        <div>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic blanditiis recusandae, aliquid reprehenderit ut 
+                veritatis dignissimos sapiente accusamus explicabo magnam atque! 
+                Accusantium nesciunt quaerat esse ut et numquam ad est!</p>
+        </div>
+        <div>
+            <a href="/agent/edit/{{agent.id}}">Edit</a><br>
+            <a href="/agent/delete/{{agent.id}}">Delete</a>
+        </div>
+    </li>
+</ul>
+{% endblock %}

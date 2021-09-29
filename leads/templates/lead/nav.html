@@ -1,0 +1,58 @@
+{% load static %}
+<header class="p-2 bg-white border">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none">
+          <img src="{% static 'img/logo.gif' %}">
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="{% url 'leads:create_user' %}" class="nav-link px-2">Create user</a></li>
+          <li>
+              <a href="{% url 'leads:lead_page' %}" class="nav-link px-2 dropdown-toggle" data-bs-toggle="dropdown">
+                Leads
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'leads:lead_page' %}">Leads</a></li>
+                <li><a class="dropdown-item" href="{% url 'leads:create_leads' %}">Create Leads</a></li>
+              </ul>
+          </li>
+          <li>
+            <a href="{% url 'leads:agents' %}" class="nav-link px-2 dropdown-toggle" data-bs-toggle="dropdown">
+              Agents
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'leads:agents' %}">Agent</a></li>
+              <li><a class="dropdown-item" href="{% url 'leads:agent_create' %}">Create agent</a></li>
+            </ul>
+        </li>
+        <li>
+          <a href="{% url 'leads:agents' %}" class="nav-link px-2 dropdown-toggle" data-bs-toggle="dropdown">
+            User
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'leads:agent_create' %}">Users</a></li>
+            <li><a class="dropdown-item" href="{% url 'leads:create_user' %}">Create user</a></li>
+          </ul>
+        </li>
+        </ul>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+        </form>
+    {% if request.user.is_authenticated %}
+    <div class="text-end">
+      <span>Hello {{request.user.username.upper}}</span>
+      <a class="btn btn-warning " href="{% url 'logout'%}">Logout</a>
+    </div>
+    {% else %}
+    <div class="text-end">
+      <a  href="{% url 'login' %}" class="btn btn-outline-dark me-2">Login</a>
+      <a href="{% url 'signup' %}" class="btn btn-warning">Sign-up</a>
+    </div>
+
+    {% endif %}
+
+      </div>
+    </div>
+  </header>

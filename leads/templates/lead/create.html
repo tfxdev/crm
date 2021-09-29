@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h4>Lead home page</h4>
+<hr class="text-secondary mb-4">
+
+<div class="row">
+        <h1>Create new lead here</h1>
+        <form method="post" action="">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Create entry</button>
+        </form>
+    </div>
+
+
+    {% endblock %}

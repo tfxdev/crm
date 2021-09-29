@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Are you sure you want to delete this agent</h1>
+<div>
+    <form method="post" action="">
+        {% csrf_token %}
+        <button type="submit">Delete agent</button>
+    </form>
+</div>
+{% endblock %}
