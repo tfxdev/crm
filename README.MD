@@ -1,0 +1,1 @@
+This is a CRM website that helps companies to communicate with their clients and keep their data. This is a complete educational project. Written using Django and powered by SQL Lite Database.
